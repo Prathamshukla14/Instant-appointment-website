@@ -15,11 +15,11 @@ export default function AboutPage() {
       <section className="section">
         <div className="wrap founder-inner">
           <Reveal className="founder-photo">
-            <img 
-  src="/founder.png" 
-  alt="Founder, InstantAppointment AI" 
-  style={{ width: "100%", height: "auto", display: "block", objectFit: "cover" }} 
-/>
+            <img src="/founder.png" alt="Founder, InstantAppointment AI" className="founder-img" />
+            <div className="founder-caption">
+              <div className="founder-caption-name">Pranshu Bansal</div>
+              <div className="founder-caption-co mono">INSTANTAPPOINTMENT AI</div>
+            </div>
           </Reveal>
           <Reveal className="founder-copy" delay={80}>
             <div className="eyebrow mono brass">MEET THE FOUNDER</div>

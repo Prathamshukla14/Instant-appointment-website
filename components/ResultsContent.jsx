@@ -144,17 +144,27 @@ export default function ResultsContent() {
           </Reveal>
           <div className="tst-grid">
             {REVIEWS.map((r, i) => (
-              <Reveal className="tst-card" delay={(i % 3) * 60} key={i}>
-                <div className="tst-stars">{"\u2605\u2605\u2605\u2605\u2605"}</div>
-                <p className="tst-quote">&ldquo;{r.quote}&rdquo;</p>
-                <div className="tst-meta">
-                  <div className="tst-avatar mono">CL</div>
-                  <div>
-                    <div className="tst-name">{r.name}</div>
-                    <div className="tst-co mono">{r.company} &middot; {r.tag}</div>
+              <a
+                key={i}
+                href="https://www.trustpilot.com/review/instantappointment-ai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tst-card-link"
+              >
+                <Reveal className="tst-card" delay={(i % 3) * 60}>
+                  <div className="tst-stars">{"\u2605\u2605\u2605\u2605\u2605"}</div>
+                  <p className="tst-quote">&ldquo;{r.quote}&rdquo;</p>
+                  <div className="tst-meta">
+                    <div className="tst-avatar mono">
+                      {r.logo ? <img src={r.logo} alt={r.company} className="tst-avatar-img" /> : "CL"}
+                    </div>
+                    <div>
+                      <div className="tst-name">{r.name}</div>
+                      <div className="tst-co mono">{r.company} &middot; {r.tag}</div>
+                    </div>
                   </div>
-                </div>
-              </Reveal>
+                </Reveal>
+              </a>
             ))}
           </div>
         </div>

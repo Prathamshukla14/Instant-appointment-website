@@ -101,14 +101,24 @@ export default function HomePage() {
           </Reveal>
           <div className="tst-grid">
             {REVIEWS.slice(0, 3).map((r, i) => (
-              <Reveal className="tst-card" delay={i * 70} key={i}>
-                <div className="tst-stars">{"\u2605\u2605\u2605\u2605\u2605"}</div>
-                <p className="tst-quote">&ldquo;{r.quote}&rdquo;</p>
-                <div className="tst-meta">
-                  <div className="tst-avatar mono">CL</div>
-                  <div><div className="tst-name">{r.name}</div><div className="tst-co mono">{r.company}</div></div>
-                </div>
-              </Reveal>
+              <a
+                key={i}
+                href="https://www.trustpilot.com/review/instantappointment-ai.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tst-card-link"
+              >
+                <Reveal className="tst-card" delay={i * 70}>
+                  <div className="tst-stars">{"\u2605\u2605\u2605\u2605\u2605"}</div>
+                  <p className="tst-quote">&ldquo;{r.quote}&rdquo;</p>
+                  <div className="tst-meta">
+                    <div className="tst-avatar mono">
+                      {r.logo ? <img src={r.logo} alt={r.company} className="tst-avatar-img" /> : "CL"}
+                    </div>
+                    <div><div className="tst-name">{r.name}</div><div className="tst-co mono">{r.company}</div></div>
+                  </div>
+                </Reveal>
+              </a>
             ))}
           </div>
           <Reveal className="sec-more"><Link href="/results" className="link-arrow">See all results &amp; testimonials <ArrowRight size={16} /></Link></Reveal>
