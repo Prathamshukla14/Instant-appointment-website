@@ -10,7 +10,11 @@ export function Footer() {
       <div className="wrap footer-inner">
         <div className="footer-brand">
           <Logo />
-          <p className="footer-tag">Done for you appointment setting for remodeling contractors. You pay only when a qualified homeowner shows.</p>
+          <div className="footer-contact">
+            <p>117 S Lexington St Ste 100<br />Harrisonville, 64701<br />Missouri, United States</p>
+            <p><a href="mailto:team@instantappointment-ai.com">team@instantappointment-ai.com</a></p>
+            <p><a href="tel:+14694614559">+1 (469) 461-4559</a></p>
+          </div>
           <SocialIcons className="footer-socials" />
         </div>
         <div className="footer-cols">

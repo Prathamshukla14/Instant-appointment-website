@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import Link from "next/link";
 import { PageHero } from "@/components/Layout";
 
 export const metadata = {
@@ -13,140 +14,131 @@ export default function TermsPage() {
       <PageHero eyebrow="TERMS OF SERVICE" title="Terms of Service" />
       <section className="section">
         <div className="wrap post-wrap">
-          <div className="post-para">
-            <p><strong>Effective Date:</strong> January 2026</p>
-            <p>These Terms of Service ("Terms") govern your use of the website instantappointment-ai.com (the "Site") and the services provided by InstantAppointment AI LLC ("Company," "we," "us," or "our"). By accessing or using the Site and our services, you agree to be bound by these Terms. If you do not agree, do not use the Site or services.</p>
-          </div>
+          <p className="policy-updated mono">Last updated: 2026</p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>1. Service Description</h2>
-          <div className="post-para">
-            <p>InstantAppointment AI provides appointment-setting and lead generation services for remodeling contractors and home service businesses. Our services include:</p>
-            <ul style={{ marginLeft: 20 }}>
-              <li>Digital advertising (Meta, Google Search)</li>
-              <li>Lead qualification and appointment scheduling</li>
-              <li>Lead routing and CRM integration</li>
-              <li>Follow-up automation</li>
-            </ul>
-            <p>We operate on a "pay per shown appointment" model: you pay only when a qualified homeowner shows for their scheduled estimate or consultation.</p>
-          </div>
+          <h2 className="policy-h">1. About Our Services</h2>
+          <p className="post-para">
+            InstantAppointment AI LLC is a digital marketing agency that provides lead generation, appointment
+            setting, and advertising management services for home service contractors. By using our website,
+            submitting a contact form, or opting in to receive communications from us, you agree to these Terms
+            of Service.
+          </p>
+          <p className="post-para">Our SMS messaging program provides the following types of messages:</p>
+          <ul className="policy-list">
+            <li>Appointment confirmations and reminders</li>
+            <li>Follow-up messages related to your service inquiry</li>
+            <li>Service updates and scheduling communications</li>
+            <li>Promotional offers and marketing messages (only if you have opted in to marketing communications)</li>
+          </ul>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>2. Eligibility</h2>
-          <div className="post-para">
-            <p>To use our services, you must:</p>
-            <ul style={{ marginLeft: 20 }}>
-              <li>Be at least 18 years old</li>
-              <li>Be a licensed contractor or legitimate home service business</li>
-              <li>Operate in a licensed, legal capacity in your jurisdiction</li>
-              <li>Not have conflicting appointments with other InstantAppointment AI clients in your market (exclusive territory)</li>
-            </ul>
-            <p>We reserve the right to refuse or terminate service to any contractor who does not meet these requirements or violates these Terms.</p>
-          </div>
+          <h2 className="policy-h">2. Eligibility</h2>
+          <p className="post-para">
+            You must be at least 18 years of age to use our services. By using our website or opting in to our
+            communications, you represent that you are at least 18 years old and have the legal capacity to
+            agree to these terms.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>3. Payment Terms</h2>
-          <div className="post-para">
-            <p><strong>Pricing:</strong> Appointment fees are quoted per market and project type. Final pricing is agreed upon before service launch.</p>
-            <p><strong>Billing:</strong> You are billed only for shown appointments. A "shown appointment" is defined as a homeowner who:</p>
-            <ul style={{ marginLeft: 20 }}>
-              <li>Has a confirmed time on your calendar</li>
-              <li>Meets qualification criteria agreed upon in writing</li>
-              <li>Appears for the scheduled consultation (no-shows are not billed)</li>
-            </ul>
-            <p><strong>Payment Method:</strong> Invoices are issued monthly. Payment is due within 30 days unless otherwise agreed. We accept ACH transfer, credit card, and check.</p>
-            <p><strong>Late Payments:</strong> Accounts 30 days past due may be suspended until payment is received.</p>
-          </div>
+          <h2 className="policy-h">3. Text Messaging Terms</h2>
+          <p className="post-para">
+            By providing your phone number and opting in through our website contact form, you consent to
+            receive text messages from InstantAppointment AI LLC as described in our{" "}
+            <Link href="/privacy">Privacy Policy</Link>.
+          </p>
+          <p className="post-para">
+            <strong>Opting Out:</strong> You can cancel the SMS service at any time. Simply text "STOP" to the
+            number from which you received a message. After sending STOP, you will receive a one-time
+            confirmation message confirming your unsubscription. After this, you will no longer receive text
+            messages from us. If you want to join again, sign up as you did the first time and we will start
+            sending text messages to you again.
+          </p>
+          <p className="post-para">
+            <strong>Getting Help:</strong> If you are experiencing issues with the messaging program, you can
+            reply with the keyword "HELP" for more assistance, or you can get help directly at{" "}
+            <a href="mailto:team@instantappointment-ai.com">team@instantappointment-ai.com</a> or{" "}
+            <a href="tel:+14694614559">+1 (469) 461-4559</a>.
+          </p>
+          <p className="post-para">
+            <strong>Carrier Disclaimer:</strong> Carriers are not liable for delayed or undelivered messages.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>4. Commitment & Termination</h2>
-          <div className="post-para">
-            <p><strong>No Long-Term Contract:</strong> There is no minimum commitment period. You may discontinue services at any time with 30 days' written notice.</p>
-            <p><strong>Our Termination Rights:</strong> We may terminate service for:</p>
-            <ul style={{ marginLeft: 20 }}>
-              <li>Non-payment of invoices 45+ days past due</li>
-              <li>Violation of these Terms or applicable laws</li>
-              <li>Fraudulent activity or misrepresentation</li>
-              <li>Conflicts with other clients in your market</li>
-              <li>Market unavailability (no qualified leads available)</li>
-            </ul>
-            <p>Termination is effective after 30 days' written notice, unless immediate termination is required due to fraud or legal violation.</p>
-          </div>
+          <h2 className="policy-h">4. Message Frequency &amp; Data Rates</h2>
+          <p className="post-para">
+            Message and data rates may apply for any messages sent to you from us and to us from you. Message
+            frequency varies based on the nature of your inquiry and your interaction with our services. If you
+            have any questions about your text plan or data plan, it is best to contact your wireless provider.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>5. Refund & No-Show Policy</h2>
-          <div className="post-para">
-            <p><strong>No-Shows:</strong> Appointments where the homeowner does not appear are not billed to you. We bear the cost of lead generation and qualification.</p>
-            <p><strong>Rescheduled Appointments:</strong> If a homeowner reschedules but later keeps the appointment, you are billed once when they show.</p>
-            <p><strong>Refunds:</strong> We do not offer refunds for shown appointments. You are paying for the cost of lead generation, qualification, and booking. Once an appointment is shown, the service has been delivered.</p>
-            <p><strong>Service Failures:</strong> If we fail to deliver qualified appointments for two consecutive months despite adequate market conditions, we will re-evaluate campaign strategy at no additional cost.</p>
-          </div>
+          <h2 className="policy-h">5. Privacy</h2>
+          <p className="post-para">
+            Your use of our services is also governed by our <Link href="/privacy">Privacy Policy</Link>, which
+            describes how we collect, use, and protect your personal information, including your phone number
+            and text messaging data. If you have opted in to receive text messages, your information is handled
+            in accordance with our Privacy Policy.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>6. Intellectual Property</h2>
-          <div className="post-para">
-            <p>All content on the Site (copy, design, graphics, logos) is the property of InstantAppointment AI LLC and protected by copyright. You may not reproduce or distribute our content without permission.</p>
-            <p>You retain ownership of your business information (name, logo, contact details) that you provide to us. We may use your company name and testimonials for marketing purposes with your consent.</p>
-          </div>
+          <h2 className="policy-h">6. Use of Website</h2>
+          <p className="post-para">
+            You agree to use our website only for lawful purposes. You shall not:
+          </p>
+          <ul className="policy-list">
+            <li>Use the website in any way that violates applicable laws or regulations</li>
+            <li>Attempt to gain unauthorized access to any part of the website</li>
+            <li>Use the website to transmit harmful, offensive, or disruptive content</li>
+            <li>Interfere with the proper functioning of the website</li>
+          </ul>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>7. Limitation of Liability</h2>
-          <div className="post-para">
-            <p>TO THE FULLEST EXTENT PERMITTED BY LAW, INSTANTAPPOINTMENT AI SHALL NOT BE LIABLE FOR:</p>
-            <ul style={{ marginLeft: 20 }}>
-              <li>Indirect, incidental, or consequential damages</li>
-              <li>Loss of profits or revenue</li>
-              <li>Loss of data or business opportunity</li>
-              <li>Homeowner behavior or no-shows (beyond our control)</li>
-            </ul>
-            <p>OUR TOTAL LIABILITY TO YOU SHALL NOT EXCEED THE FEES YOU PAID IN THE PAST 12 MONTHS.</p>
-            <p>Some jurisdictions do not allow limitation of liability, so this may not apply to you.</p>
-          </div>
+          <h2 className="policy-h">7. Intellectual Property</h2>
+          <p className="post-para">
+            All content on this website, including text, graphics, logos, and images, is the property of
+            InstantAppointment AI LLC or its content suppliers and is protected by applicable intellectual
+            property laws. You may not reproduce, distribute, or create derivative works from our content
+            without prior written consent.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>8. Warranties & Disclaimers</h2>
-          <div className="post-para">
-            <p><strong>Disclaimer:</strong> We provide our services "as is" without warranties of any kind, express or implied. We do not guarantee:</p>
-            <ul style={{ marginLeft: 20 }}>
-              <li>Any specific number of leads or appointments</li>
-              <li>Conversion to closed projects</li>
-              <li>Continuous availability of the service</li>
-            </ul>
-            <p>Results vary by market, season, and contractor responsiveness. Past performance does not guarantee future results.</p>
-          </div>
+          <h2 className="policy-h">8. Limitation of Liability</h2>
+          <p className="post-para">
+            InstantAppointment AI LLC provides this website and its services on an "as is" basis. We make no
+            warranties, express or implied, regarding the accuracy, reliability, or availability of our website
+            or services. To the fullest extent permitted by law, InstantAppointment AI LLC shall not be liable
+            for any indirect, incidental, special, or consequential damages arising from your use of our
+            website or services.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>9. Indemnification</h2>
-          <div className="post-para">
-            <p>You agree to indemnify and hold harmless InstantAppointment AI from any claims, damages, or costs arising from:</p>
-            <ul style={{ marginLeft: 20 }}>
-              <li>Your violation of these Terms</li>
-              <li>Your violation of applicable laws</li>
-              <li>Your conduct with homeowners or clients</li>
-              <li>Your licensing or insurance status</li>
-            </ul>
-          </div>
+          <h2 className="policy-h">9. Indemnification</h2>
+          <p className="post-para">
+            You agree to indemnify and hold harmless InstantAppointment AI LLC, its officers, employees, and
+            agents from any claims, damages, losses, or expenses arising from your use of our website or your
+            violation of these Terms of Service.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>10. Dispute Resolution</h2>
-          <div className="post-para">
-            <p><strong>Informal Resolution:</strong> Before pursuing legal action, either party agrees to attempt resolution through good-faith negotiation within 30 days.</p>
-            <p><strong>Governing Law:</strong> These Terms are governed by the laws of the State of Missouri, without regard to conflicts of law.</p>
-            <p><strong>Jurisdiction:</strong> Both parties agree to submit to the exclusive jurisdiction of the state and federal courts located in Cass County, Missouri.</p>
-            <p><strong>Arbitration:</strong> Either party may elect binding arbitration instead of litigation. If chosen, disputes will be resolved by a single arbitrator under JAMS rules.</p>
-          </div>
+          <h2 className="policy-h">10. Changes to Terms</h2>
+          <p className="post-para">
+            We reserve the right to modify these Terms of Service at any time. Changes will be effective when
+            posted on this page. Your continued use of our website after any changes constitutes your
+            acceptance of the updated terms.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>11. Modifications to Terms</h2>
-          <div className="post-para">
-            <p>We may update these Terms at any time. Changes become effective when posted to this page. Your continued use of the Site and services constitutes acceptance of updated Terms. We will provide notice of material changes via email when possible.</p>
-          </div>
+          <h2 className="policy-h">11. Governing Law</h2>
+          <p className="post-para">
+            These Terms of Service shall be governed by and construed in accordance with the laws of the state
+            in which InstantAppointment AI LLC operates, without regard to conflict of law principles.
+          </p>
 
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>12. Severability</h2>
-          <div className="post-para">
-            <p>If any provision of these Terms is found to be unenforceable, the remaining provisions shall remain in full force and effect.</p>
-          </div>
-
-          <h2 style={{ marginTop: 40, marginBottom: 20 }}>13. Contact Us</h2>
-          <div className="post-para">
-            <p>If you have questions about these Terms of Service, please contact us:</p>
-            <p>
-              <strong>InstantAppointment AI LLC</strong><br />
-              117 S Lexington St Ste 100<br />
-              Harrisonville, MO 64701<br />
-              Email: <a href="mailto:team@instantappointment-ai.com">team@instantappointment-ai.com</a><br />
-              Phone: <a href="tel:+14694611559">+1 (469) 461-1559</a>
-            </p>
-          </div>
+          <h2 className="policy-h">12. Contact Us</h2>
+          <p className="post-para">
+            If you have any questions about these Terms of Service, please contact us:
+          </p>
+          <ul className="policy-list">
+            <li>
+              Email: <a href="mailto:team@instantappointment-ai.com">team@instantappointment-ai.com</a>
+            </li>
+            <li>
+              Phone: <a href="tel:+14694614559">+1 (469) 461-4559</a>
+            </li>
+            <li>
+              Website: <a href="https://instantappointment-ai.com/">https://instantappointment-ai.com/</a>
+            </li>
+          </ul>
         </div>
       </section>
     </main>

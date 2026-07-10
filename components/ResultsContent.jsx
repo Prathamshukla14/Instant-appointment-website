@@ -21,9 +21,9 @@ function VideoLightbox({ video, onClose }) {
         <button className="vb-close" aria-label="Close" onClick={onClose}><X size={22} /></button>
         <div className="vb-frame">
           {video.embed ? (
-            <iframe 
-              src={video.embed} 
-              title={video.company} 
+            <iframe
+              src={video.embed}
+              title={video.company}
               frameBorder="0"
               allow="autoplay"
               allowFullScreen
@@ -44,7 +44,6 @@ function VideoLightbox({ video, onClose }) {
 
 function VideoCarousel() {
   const [playing, setPlaying] = useState(null);
-  const [active, setActive] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
   const scrollRef = React.useRef(null);
@@ -86,7 +85,12 @@ function VideoCarousel() {
           {VIDEOS.map((v, i) => (
             <Reveal key={i} className="carousel-card" delay={i * 50}>
               <div className="vid-thumb" onClick={() => setPlaying(v)}>
-                <div className="vid-thumb-ph mono">TESTIMONIAL</div>
+                {v.poster ? (
+                  <img src={v.poster} alt={v.name} className="vid-thumb-img" />
+                ) : (
+                  <div className="vid-thumb-ph mono">TESTIMONIAL</div>
+                )}
+                <div className="vid-thumb-overlay" />
                 <button className="vid-play" aria-label="Play testimonial" onClick={() => setPlaying(v)}>
                   <PlayCircle size={54} />
                 </button>
@@ -144,9 +148,9 @@ export default function ResultsContent() {
           </Reveal>
           <div className="tst-grid">
             {REVIEWS.map((r, i) => (
-              <a
-                key={i}
-                href="https://www.trustpilot.com/review/instantappointment-ai.com"
+            <a
+              key={i}
+              href="https://www.trustpilot.com/review/instantappointment-ai.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="tst-card-link"
@@ -164,7 +168,7 @@ export default function ResultsContent() {
                     </div>
                   </div>
                 </Reveal>
-              </a>
+                </a>
             ))}
           </div>
         </div>
