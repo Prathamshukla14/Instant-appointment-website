@@ -21,6 +21,7 @@ export function Footer() {
           <div>
             <div className="footer-h mono">Company</div>
             <Link href="/services">What We Run</Link>
+            <Link href="/industries">Industries</Link>
             <Link href="/how-it-works">How It Works</Link>
             <Link href="/results">Results</Link>
             <Link href="/about">About</Link>

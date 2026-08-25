@@ -4,7 +4,7 @@ import { Reveal } from "@/components/Primitives";
 import { FinalCTA } from "@/components/Layout";
 import { GCal, NotifyMock } from "@/components/Showcase";
 import FaqList from "@/components/FaqList";
-import { SERVICES, PILLARS, REVIEWS } from "@/lib/content";
+import { SERVICES, PILLARS, REVIEWS, INDUSTRIES } from "@/lib/content";
 
 export default function HomePage() {
   return (
@@ -63,6 +63,28 @@ export default function HomePage() {
       </section>
 
       <section className="section model">
+        <div className="wrap">
+          <Reveal className="sec-head">
+            <div className="eyebrow mono brass">WHO WE BOOK FOR</div>
+            <h2>Specialists in the remodeling niches we serve.</h2>
+            <p className="sec-lede">Same system, tuned to your projects. Pick your niche and see exactly how we fill your calendar.</p>
+          </Reveal>
+          <div className="ind-home-grid">
+            {INDUSTRIES.map((ind, i) => (
+              <Reveal className="ind-home-card" delay={i * 45} key={ind.slug} as="article">
+                <Link href={`/industries/${ind.slug}`} className="ind-home-link">
+                  <div className="svc-ico"><ind.icon size={20} strokeWidth={1.8} /></div>
+                  <h3>{ind.name}</h3>
+                  <span className="ind-home-arrow"><ArrowUpRight size={16} /></span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="sec-more"><Link href="/industries" className="link-arrow">See all industries we serve <ArrowRight size={16} /></Link></Reveal>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="wrap">
           <Reveal className="sec-head">
             <div className="eyebrow mono brass">THE MODEL</div>

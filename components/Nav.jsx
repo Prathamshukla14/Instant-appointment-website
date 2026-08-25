@@ -6,6 +6,7 @@ import { Logo, SocialIcons } from "./Primitives";
 
 const NAV_LINKS = [
   { href: "/services", label: "What We Run" },
+  { href: "/industries", label: "Industries" },
   { href: "/how-it-works", label: "How It Works" },
   { href: "/results", label: "Results" },
   { href: "/blog", label: "Blog" },

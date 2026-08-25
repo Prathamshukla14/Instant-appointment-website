@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { PageHero } from "@/components/Layout";
 
 export const metadata = {
@@ -21,7 +22,7 @@ export default function ContactPage() {
               id="wa1dsl7BTyanmXxlAmLS_1783592340398"
               title="Book RemodelingPro Growth Call"
             />
-            <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" />
+            <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
           </div>
         </div>
       </section>
