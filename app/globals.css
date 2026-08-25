@@ -487,8 +487,8 @@ a{color:inherit;text-decoration:none}
 .cal-tab.on{background:linear-gradient(180deg,var(--brass-hi),var(--brass));color:#161009}
 .cal-tab.on svg{color:#161009}
 .cal-sub{text-align:center;font-size:12.5px;color:var(--muted);margin:0 0 22px}
-.calendar-embed{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;padding:6px}
-.calendar-embed iframe{display:block;border-radius:10px}
+.calendar-embed{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:6px}
+.calendar-embed iframe{display:block;border-radius:10px;width:100%}
 
 @media(max-width:900px){
   .nav-dd{display:none}
