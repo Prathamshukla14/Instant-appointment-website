@@ -23,8 +23,18 @@ const CALENDARS = {
 };
 
 export default function ContactCalendars({ defaultType = "leads" }) {
-  const [tab, setTab] = useState(defaultType === "appointments" ? "appointments" : "leads");
-  const cal = CALENDARS[tab];
+  const initial = defaultType === "appointments" ? "appointments" : "leads";
+  const [tab, setTab] = useState(initial);
+  // Each iframe mounts once, on first activation, and stays mounted from then on.
+  // GHL's resize script only tracks an iframe correctly from its initial load, so
+  // remounting on every tab switch left the widget stuck at its starting height.
+  const [mounted, setMounted] = useState({ [initial]: true });
+
+  function selectTab(key) {
+    setTab(key);
+    setMounted((m) => (m[key] ? m : { ...m, [key]: true }));
+  }
+
   return (
     <div className="cal-wrap">
       <div className="cal-tabs" role="tablist">
@@ -32,7 +42,7 @@ export default function ContactCalendars({ defaultType = "leads" }) {
           role="tab"
           aria-selected={tab === "leads"}
           className={`cal-tab ${tab === "leads" ? "on" : ""}`}
-          onClick={() => setTab("leads")}
+          onClick={() => selectTab("leads")}
         >
           <CalendarClock size={17} /> Exclusive Leads
         </button>
@@ -40,22 +50,26 @@ export default function ContactCalendars({ defaultType = "leads" }) {
           role="tab"
           aria-selected={tab === "appointments"}
           className={`cal-tab ${tab === "appointments" ? "on" : ""}`}
-          onClick={() => setTab("appointments")}
+          onClick={() => selectTab("appointments")}
         >
           <CalendarCheck size={17} /> Remodeling &amp; HVAC
         </button>
       </div>
-      <p className="cal-sub mono">{cal.sub}</p>
+      <p className="cal-sub mono">{CALENDARS[tab].sub}</p>
       <div className="calendar-embed">
-        <iframe
-          key={tab}
-          src={cal.src}
-          allow={cal.allow}
-          style={{ width: "100%", border: "none", minHeight: "600px" }}
-          scrolling="no"
-          id={cal.id}
-          title={cal.title}
-        />
+        {Object.entries(CALENDARS).map(([key, cal]) => (
+          mounted[key] && (
+            <iframe
+              key={key}
+              src={cal.src}
+              allow={cal.allow}
+              style={{ width: "100%", border: "none", minHeight: "600px", display: tab === key ? "block" : "none" }}
+              scrolling="no"
+              id={cal.id}
+              title={cal.title}
+            />
+          )
+        ))}
       </div>
       <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
     </div>
