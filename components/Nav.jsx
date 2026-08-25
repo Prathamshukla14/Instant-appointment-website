@@ -77,7 +77,7 @@ export default function Nav() {
             {NAV_LINKS.filter((l) => l.href !== "/services").map((l) => <Link key={l.href} href={l.href}>{l.label}</Link>)}
           </nav>
           <div className="nav-right">
-            <Link href="/contact" className="btn btn-brass nav-cta">Start a Trial</Link>
+            <Link href="/contact" className="btn btn-brass nav-cta">Book a Call</Link>
             <button className="burger" aria-label="Open menu" onClick={() => setOpen(true)}><Menu size={24} /></button>
           </div>
         </div>

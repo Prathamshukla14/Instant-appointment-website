@@ -22,7 +22,7 @@ export default function HomePage() {
             </h1>
             <p className="hero-sub anim-up d4">For established home service companies across 15+ trades. We cover the ad spend and lead generation. You get exclusive homeowners, never shared, and you control the volume.</p>
             <div className="hero-cta anim-up d5">
-              <Link href="/pricing" className="btn btn-brass">Start a 3-Day Trial <ArrowUpRight size={17} /></Link>
+              <Link href="/pricing" className="btn btn-brass">Secure Your Area<ArrowUpRight size={17} /></Link>
               <Link href="/how-it-works" className="btn btn-ghost">See How It Works</Link>
             </div>
             <div className="hero-pills anim-up d6">
