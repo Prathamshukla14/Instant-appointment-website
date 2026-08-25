@@ -61,10 +61,11 @@ export default function ContactCalendars({ defaultType = "leads" }) {
           mounted[key] && (
             <iframe
               key={key}
+              className="cal-iframe"
               src={cal.src}
               allow={cal.allow}
-              style={{ width: "100%", border: "none", minHeight: "600px", display: tab === key ? "block" : "none" }}
-              scrolling="no"
+              style={{ display: tab === key ? "block" : "none" }}
+              scrolling="auto"
               id={cal.id}
               title={cal.title}
             />

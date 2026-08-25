@@ -488,7 +488,8 @@ a{color:inherit;text-decoration:none}
 .cal-tab.on svg{color:#161009}
 .cal-sub{text-align:center;font-size:12.5px;color:var(--muted);margin:0 0 22px}
 .calendar-embed{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:6px}
-.calendar-embed iframe{display:block;border-radius:10px;width:100%}
+.cal-iframe{border-radius:10px !important;width:100% !important;height:900px !important;border:none !important}
+@media(max-width:600px){.cal-iframe{height:1000px !important}}
 
 @media(max-width:900px){
   .nav-dd{display:none}
