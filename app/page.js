@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight, Wallet, ShieldCheck, MapPin } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Lock, Wallet, GaugeCircle, Check } from "lucide-react";
 import { Reveal } from "@/components/Primitives";
 import { FinalCTA } from "@/components/Layout";
 import { GCal, NotifyMock } from "@/components/Showcase";
 import FaqList from "@/components/FaqList";
-import { SERVICES, PILLARS, REVIEWS, INDUSTRIES } from "@/lib/content";
+import { NICHES, OFFERS, LEAD_STEPS, SPEED_POINTS, PILLARS, REVIEWS } from "@/lib/content";
 
 export default function HomePage() {
   return (
@@ -14,76 +14,146 @@ export default function HomePage() {
         <div className="glow" aria-hidden="true" />
         <div className="wrap hero-inner">
           <div className="hero-left">
-            <div className="eyebrow mono anim-up">KITCHEN &middot; BATH &middot; WHOLE HOME REMODELS</div>
+            <div className="eyebrow mono anim-up">EXCLUSIVE LEADS &amp; SHOWN APPOINTMENTS FOR HOME SERVICES</div>
             <h1 className="hero-h1">
-              <span className="anim-up d1">We fill your calendar</span>
-              <span className="anim-up d2">with qualified, <span className="brass">shown</span></span>
-              <span className="anim-up d3">remodeling appointments.</span>
+              <span className="anim-up d1">We fill your pipeline with</span>
+              <span className="anim-up d2">exclusive <span className="brass">leads</span> and shown</span>
+              <span className="anim-up d3">appointments.</span>
             </h1>
-            <p className="hero-sub anim-up d4">Or you don&apos;t pay. Built for remodeling contractors who want booked consultations, not shared leads or a monthly ad bill.</p>
+            <p className="hero-sub anim-up d4">For established home service companies across 15+ trades. We cover the ad spend and lead generation. You get exclusive homeowners, never shared, and you control the volume.</p>
             <div className="hero-cta anim-up d5">
-              <Link href="/contact" className="btn btn-brass">Secure Your Market <ArrowUpRight size={17} /></Link>
+              <Link href="/pricing" className="btn btn-brass">Start a 3-Day Trial <ArrowUpRight size={17} /></Link>
               <Link href="/how-it-works" className="btn btn-ghost">See How It Works</Link>
             </div>
             <div className="hero-pills anim-up d6">
               <span><Wallet size={14} /> We cover the ad spend</span>
-              <span><ShieldCheck size={14} /> Pay per shown appointment</span>
-              <span><MapPin size={14} /> Exclusive territory</span>
+              <span><Lock size={14} /> 100% exclusive leads</span>
+              <span><GaugeCircle size={14} /> You control the volume</span>
             </div>
           </div>
         </div>
         <div className="wrap hero-cal anim-up d5"><GCal /></div>
         <div className="wrap">
           <div className="stat-band">
-            <div className="stat"><div className="stat-num">&lt;5<span>min</span></div><div className="stat-label mono">speed to lead</div></div>
+            <div className="stat"><div className="stat-num">15+</div><div className="stat-label mono">home service niches</div></div>
+            <div className="stat"><div className="stat-num">24<span>hr</span></div><div className="stat-label mono">to first leads</div></div>
+            <div className="stat"><div className="stat-num">100<span>%</span></div><div className="stat-label mono">exclusive to you</div></div>
             <div className="stat"><div className="stat-num">$0</div><div className="stat-label mono">ad spend billed to you</div></div>
-            <div className="stat"><div className="stat-num">1</div><div className="stat-label mono">contractor per market</div></div>
-            <div className="stat"><div className="stat-num">$0</div><div className="stat-label mono">paid until they show</div></div>
           </div>
         </div>
       </section>
 
+      {/* Niches */}
       <section className="section">
         <div className="wrap">
           <Reveal className="sec-head">
-            <div className="eyebrow mono brass">WHAT WE RUN</div>
-            <h2>Everything that feeds the calendar. Nothing that doesn&apos;t.</h2>
-            <p className="sec-lede">One focus, remodeling. One deliverable, a shown appointment. These are the six pieces we stack to get there.</p>
+            <div className="eyebrow mono brass">WHO WE GENERATE FOR</div>
+            <h2>One engine, built for every home service trade.</h2>
+            <p className="sec-lede">Pick your trade and see exactly how we fill your pipeline. Most niches run on exclusive pay per lead. Remodeling and HVAC run on pay per shown appointment.</p>
           </Reveal>
-          <div className="svc-grid">
-            {SERVICES.map((s, i) => (
-              <Reveal className="svc-card" delay={i * 55} key={s.title}>
-                <div className="svc-ico"><s.icon size={20} strokeWidth={1.8} /></div>
-                <h3>{s.title}</h3><p>{s.body}</p>
-              </Reveal>
-            ))}
-          </div>
-          <Reveal className="sec-more"><Link href="/services" className="link-arrow">Explore everything we run <ArrowRight size={16} /></Link></Reveal>
-        </div>
-      </section>
-
-      <section className="section model">
-        <div className="wrap">
-          <Reveal className="sec-head">
-            <div className="eyebrow mono brass">WHO WE BOOK FOR</div>
-            <h2>Specialists in the remodeling niches we serve.</h2>
-            <p className="sec-lede">Same system, tuned to your projects. Pick your niche and see exactly how we fill your calendar.</p>
-          </Reveal>
-          <div className="ind-home-grid">
-            {INDUSTRIES.map((ind, i) => (
-              <Reveal className="ind-home-card" delay={i * 45} key={ind.slug} as="article">
-                <Link href={`/industries/${ind.slug}`} className="ind-home-link">
-                  <div className="svc-ico"><ind.icon size={20} strokeWidth={1.8} /></div>
-                  <h3>{ind.name}</h3>
-                  <span className="ind-home-arrow"><ArrowUpRight size={16} /></span>
+          <div className="niche-grid">
+            {NICHES.map((n, i) => (
+              <Reveal className="niche-card" delay={i * 25} key={n.slug} as="article">
+                <Link href={n.live ? `/services/${n.slug}` : "/services"} className="niche-link">
+                  <div className="niche-ico"><n.icon size={19} strokeWidth={1.8} /></div>
+                  <div className="niche-copy">
+                    <h3>{n.name}</h3>
+                    <span className={`niche-tag mono ${n.model}`}>{n.model === "appointment" ? "Appointments" : "Leads"}</span>
+                  </div>
+                  {!n.live && <span className="niche-soon mono">Soon</span>}
                 </Link>
               </Reveal>
             ))}
           </div>
-          <Reveal className="sec-more"><Link href="/industries" className="link-arrow">See all industries we serve <ArrowRight size={16} /></Link></Reveal>
+          <Reveal className="sec-more"><Link href="/services" className="link-arrow">See all services we generate for <ArrowRight size={16} /></Link></Reveal>
         </div>
       </section>
 
+      {/* Two offers */}
+      <section className="section model">
+        <div className="wrap">
+          <Reveal className="sec-head">
+            <div className="eyebrow mono brass">TWO WAYS TO WORK WITH US</div>
+            <h2>Leads or appointments. You always pay for results.</h2>
+            <p className="sec-lede">We cover the ad spend either way. The only question is whether you want exclusive leads to call, or qualified appointments already booked.</p>
+          </Reveal>
+          <div className="offer-grid">
+            {[OFFERS.lead, OFFERS.appointment].map((o, i) => (
+              <Reveal className="offer-card" delay={i * 90} key={o.key}>
+                <div className="offer-top">
+                  <span className="offer-badge mono">{o.badge}</span>
+                  <h3>{o.name}</h3>
+                  <p className="offer-tag">{o.tagline}</p>
+                </div>
+                <ul className="offer-points">
+                  {o.points.map((p) => (
+                    <li key={p}><Check size={16} strokeWidth={2.4} /> <span>{p}</span></li>
+                  ))}
+                </ul>
+                <div className="offer-price mono">{o.priceLine}</div>
+                <Link href="/pricing" className={`btn ${i === 0 ? "btn-brass" : "btn-ghost"} offer-cta`}>{o.cta} <ArrowUpRight size={16} /></Link>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How lead gen works (teaser) */}
+      <section className="section">
+        <div className="wrap">
+          <Reveal className="sec-head">
+            <div className="eyebrow mono brass">HOW THE LEAD ENGINE RUNS</div>
+            <h2>From target list to a lead on your phone.</h2>
+            <p className="sec-lede">Every morning our system works your market so your team wakes up to verified, exclusive homeowners ready for a quote.</p>
+          </Reveal>
+          <div className="lead-steps">
+            {LEAD_STEPS.map((s, i) => (
+              <Reveal className="lead-step" delay={i * 55} key={s.n}>
+                <div className="lead-step-top">
+                  <div className="lead-step-ico"><s.icon size={20} strokeWidth={1.8} /></div>
+                  <span className="lead-step-num mono">{s.n}</span>
+                </div>
+                <h3>{s.t}</h3>
+                <p>{s.b}</p>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal className="sec-more"><Link href="/how-it-works" className="link-arrow">See the full process <ArrowRight size={16} /></Link></Reveal>
+        </div>
+      </section>
+
+      {/* Speed matters */}
+      <section className="section model">
+        <div className="wrap speed-wrap">
+          <Reveal className="sec-head">
+            <div className="eyebrow mono brass">WHY SPEED MATTERS</div>
+            <h2>Call within 5 minutes. Book 40–50% into estimates.</h2>
+            <p className="sec-lede">Leads are hottest in the first five minutes. The sooner you call, the higher your close rate. We deliver the opportunity. You close.</p>
+          </Reveal>
+          <div className="speed-band">
+            {SPEED_POINTS.map((s, i) => (
+              <Reveal className={`speed-cell ${s.strong ? "on" : ""}`} delay={i * 70} key={s.time}>
+                <div className="speed-time mono">{s.time}</div>
+                <div className="speed-label">{s.label}</div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How appointments arrive */}
+      <section className="section notify-sec">
+        <div className="wrap">
+          <Reveal className="sec-head">
+            <div className="eyebrow mono brass">HOW LEADS &amp; APPOINTMENTS ARRIVE</div>
+            <h2>Straight to your phone. Straight to your calendar.</h2>
+            <p className="sec-lede">Every lead comes with the homeowner&apos;s name, contact info, address, and the conversation history, by SMS and email, the moment they respond.</p>
+          </Reveal>
+          <NotifyMock />
+        </div>
+      </section>
+
+      {/* The commitments */}
       <section className="section">
         <div className="wrap">
           <Reveal className="sec-head">
@@ -100,26 +170,15 @@ export default function HomePage() {
               </Reveal>
             ))}
           </div>
-          <Reveal className="sec-more"><Link href="/how-it-works" className="link-arrow">See the full process <ArrowRight size={16} /></Link></Reveal>
         </div>
       </section>
 
-      <section className="section notify-sec">
-        <div className="wrap">
-          <Reveal className="sec-head">
-            <div className="eyebrow mono brass">HOW APPOINTMENTS ARRIVE</div>
-            <h2>Straight to your phone. Straight to your calendar.</h2>
-            <p className="sec-lede">Every shown appointment comes with the homeowner&apos;s name, project type, verified details, and a confirmed time. You just show up to the visit.</p>
-          </Reveal>
-          <NotifyMock />
-        </div>
-      </section>
-
-      <section className="section">
+      {/* Reviews */}
+      <section className="section model">
         <div className="wrap">
           <Reveal className="sec-head">
             <div className="eyebrow mono brass">REAL OPERATORS. REAL BOOKED CALENDARS.</div>
-            <h2>What remodelers say.</h2>
+            <h2>What home service owners say.</h2>
           </Reveal>
           <div className="tst-grid">
             {REVIEWS.slice(0, 3).map((r, i) => (
@@ -131,7 +190,7 @@ export default function HomePage() {
                 className="tst-card-link"
               >
                 <Reveal className="tst-card" delay={i * 70}>
-                  <div className="tst-stars">{"\u2605\u2605\u2605\u2605\u2605"}</div>
+                  <div className="tst-stars">{"★★★★★"}</div>
                   <p className="tst-quote">&ldquo;{r.quote}&rdquo;</p>
                   <div className="tst-meta">
                     <div className="tst-avatar mono">
@@ -147,14 +206,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="section model">
+      {/* FAQ */}
+      <section className="section">
         <div className="wrap faq-wrap">
-          <Reveal className="sec-head"><div className="eyebrow mono brass">FREQUENTLY ASKED</div><h2>Questions remodelers ask before signing.</h2></Reveal>
+          <Reveal className="sec-head"><div className="eyebrow mono brass">FREQUENTLY ASKED</div><h2>Questions owners ask before starting.</h2></Reveal>
           <FaqList />
         </div>
       </section>
 
-      <FinalCTA />
+      <FinalCTA h="Ready for exclusive homeowners in your pipeline?"
+        sub="Start with a low risk 3-day trial. If you have a team ready to follow up, we can have leads hitting your phone within 24 hours." />
     </main>
   );
 }

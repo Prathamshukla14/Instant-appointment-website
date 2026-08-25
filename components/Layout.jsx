@@ -20,23 +20,29 @@ export function Footer() {
         <div className="footer-cols">
           <div>
             <div className="footer-h mono">Company</div>
-            <Link href="/services">What We Run</Link>
-            <Link href="/industries">Industries</Link>
+            <Link href="/services">Services</Link>
             <Link href="/how-it-works">How It Works</Link>
+            <Link href="/pricing">Pricing</Link>
             <Link href="/results">Results</Link>
             <Link href="/about">About</Link>
           </div>
           <div>
-            <div className="footer-h mono">Resources</div>
+            <div className="footer-h mono">Top Trades</div>
+            <Link href="/services/roofing">Roofing Leads</Link>
+            <Link href="/services/junk-removal">Junk Removal Leads</Link>
+            <Link href="/services/remodeling">Remodeling Appointments</Link>
+            <Link href="/services/hvac">HVAC Appointments</Link>
             <Link href="/blog">Blog</Link>
-            <Link href="/contact">Contact Us</Link>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/terms">Terms of Service</Link>
           </div>
         </div>
       </div>
       <div className="wrap footer-bottom">
         <span>&copy; 2026 InstantAppointment AI LLC. All rights reserved.</span>
+        <span className="footer-legal">
+          <Link href="/contact">Contact</Link>
+          <Link href="/privacy">Privacy Policy</Link>
+          <Link href="/terms">Terms of Service</Link>
+        </span>
       </div>
     </footer>
   );

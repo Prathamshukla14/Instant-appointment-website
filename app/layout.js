@@ -6,32 +6,36 @@ import { SITE } from "@/lib/content";
 export const metadata = {
   metadataBase: new URL(SITE.domain),
   title: {
-    default: "InstantAppointment AI: Pay Per Appointment Marketing for Remodeling Contractors",
+    default: "InstantAppointment AI: Exclusive Leads & Shown Appointments for Home Services",
     template: "%s | InstantAppointment AI",
   },
   description:
-    "InstantAppointment AI books qualified, shown remodeling consultations on a pay per appointment model. We cover the ad spend, run exclusive territories, and you pay only when a homeowner shows.",
+    "InstantAppointment AI delivers exclusive leads and shown appointments for home service companies across 15+ trades. We cover the ad spend, leads are never shared, and you pay only for results. Start with a 3-day trial.",
   keywords: [
-    "remodeling contractor marketing",
-    "pay per appointment",
-    "remodeling leads",
-    "kitchen remodel leads",
-    "bathroom remodel leads",
-    "appointment setting for contractors",
+    "home service leads",
+    "exclusive contractor leads",
+    "pay per lead",
+    "pay per shown appointment",
+    "roofing leads",
+    "junk removal leads",
+    "hvac appointments",
+    "remodeling appointments",
+    "home service lead generation",
+    "exclusive leads for contractors",
   ],
   openGraph: {
     type: "website",
     url: SITE.domain,
     siteName: SITE.name,
-    title: "InstantAppointment AI: Pay Per Appointment Marketing for Remodeling Contractors",
+    title: "InstantAppointment AI: Exclusive Leads & Shown Appointments for Home Services",
     description:
-      "Qualified, shown remodeling appointments on a pay per appointment model. We cover the ad spend and run exclusive territories.",
+      "Exclusive leads and shown appointments for home service companies across 15+ trades. We cover the ad spend, leads are never shared, and you pay only for results.",
     images: [{ url: "/logo/emblem_squircle_1000.png", width: 1000, height: 1000, alt: "InstantAppointment AI" }],
   },
   twitter: {
     card: "summary",
     title: "InstantAppointment AI",
-    description: "Pay per appointment marketing for remodeling contractors.",
+    description: "Exclusive leads and shown appointments for home service companies.",
     images: ["/logo/emblem_squircle_1000.png"],
   },
   icons: { icon: "/logo/emblem_squircle_512.png", apple: "/logo/emblem_squircle_512.png" },
@@ -46,7 +50,7 @@ const orgSchema = {
   url: SITE.domain,
   logo: `${SITE.domain}/logo/emblem_squircle_1000.png`,
   description:
-    "InstantAppointment AI is a marketing agency that books qualified, shown remodeling consultations for home remodeling contractors on a pay per appointment model.",
+    "InstantAppointment AI is a lead generation and appointment setting agency for home service companies across 15+ trades, delivering exclusive leads and shown appointments on a pay for results model.",
   // Every real profile URL so Google links the entity together.
   sameAs: [
     "https://www.linkedin.com/company/instantestimate-ai/",

@@ -16,11 +16,12 @@ function FaqItem({ q, a, open, onClick }) {
   );
 }
 
-export default function FaqList() {
+export default function FaqList({ items }) {
   const [open, setOpen] = useState(0);
+  const list = items && items.length ? items : FAQ;
   return (
     <div className="faq-list">
-      {FAQ.map((f, i) => (
+      {list.map((f, i) => (
         <Reveal delay={i * 30} key={f.q}>
           <FaqItem q={f.q} a={f.a} open={open === i} onClick={() => setOpen(open === i ? -1 : i)} />
         </Reveal>
