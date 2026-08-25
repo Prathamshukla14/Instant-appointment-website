@@ -51,8 +51,8 @@ export default function ContactCalendars({ defaultType = "leads" }) {
           key={tab}
           src={cal.src}
           allow={cal.allow}
-          style={{ width: "100%", border: "none", minHeight: "1150px" }}
-          scrolling="yes"
+          style={{ width: "100%", border: "none", minHeight: "600px" }}
+          scrolling="no"
           id={cal.id}
           title={cal.title}
         />
