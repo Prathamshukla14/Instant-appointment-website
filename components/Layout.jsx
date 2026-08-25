@@ -51,6 +51,8 @@ export function Footer() {
 export function FinalCTA({
   h = "Ready to see if your market is still open?",
   sub = "Territories are exclusive. Once a remodeler locks a market with us, we will not run a competing account next door.",
+  href = "/contact",
+  cta = "Book Your Growth Call",
 }) {
   return (
     <section className="section final">
@@ -59,7 +61,7 @@ export function FinalCTA({
         <Reveal>
           <h2 className="final-h">{h}</h2>
           <p className="final-sub">{sub}</p>
-          <Link href="/contact" className="btn btn-brass btn-lg">Book Your Growth Call <ArrowUpRight size={18} /></Link>
+          <Link href={href} className="btn btn-brass btn-lg">{cta} <ArrowUpRight size={18} /></Link>
         </Reveal>
       </div>
     </section>

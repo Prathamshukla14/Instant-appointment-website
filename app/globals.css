@@ -478,8 +478,21 @@ a{color:inherit;text-decoration:none}
 .drawer-niches{display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:10px 0 6px}
 .drawer-niches a{display:flex;align-items:center;gap:8px;padding:9px 6px;font-family:'Inter',sans-serif;font-weight:500;font-size:13px;color:var(--muted-2);border:none}
 .drawer-niches a svg{color:var(--brass);flex-shrink:0}
+/* ===== Contact calendar tabs ===== */
+.cal-wrap{max-width:900px;margin:0 auto}
+.cal-tabs{display:flex;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px;margin-bottom:16px}
+.cal-tab{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 16px;border-radius:9px;background:none;border:1px solid transparent;cursor:pointer;font-family:'Inter',sans-serif;font-weight:600;font-size:14.5px;color:var(--muted-2);transition:all .18s}
+.cal-tab svg{color:var(--muted)}
+.cal-tab:hover{color:var(--text)}
+.cal-tab.on{background:linear-gradient(180deg,var(--brass-hi),var(--brass));color:#161009}
+.cal-tab.on svg{color:#161009}
+.cal-sub{text-align:center;font-size:12.5px;color:var(--muted);margin:0 0 22px}
+.calendar-embed{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;padding:6px}
+.calendar-embed iframe{display:block;border-radius:10px}
+
 @media(max-width:900px){
   .nav-dd{display:none}
+  .cal-tab{font-size:13px;padding:12px 10px}
 }
 @media(max-width:600px){
   .nav-dd-menu{grid-template-columns:1fr}

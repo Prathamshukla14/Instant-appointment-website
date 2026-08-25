@@ -95,7 +95,7 @@ export function LeadNicheHome({ niche }) {
             <HeroTitle lines={niche.hero.title} />
             <p className="hero-sub anim-up d4">{niche.hero.sub}</p>
             <div className="hero-cta anim-up d5">
-              <Link href="/contact" className="btn btn-brass">Get Your Leads <ArrowUpRight size={17} /></Link>
+              <Link href="/contact?type=leads" className="btn btn-brass">Get Your Leads <ArrowUpRight size={17} /></Link>
               <Link href="/how-it-works" className="btn btn-ghost">See How It Works</Link>
             </div>
             <div className="hero-pills anim-up d6">
@@ -169,7 +169,8 @@ export function LeadNicheHome({ niche }) {
       </section>
 
       <FinalCTA h={`Ready for exclusive ${niche.noun} leads?`}
-        sub="Start with a low risk 3-day trial. If your team is ready to follow up fast, we can have exclusive homeowners hitting your pipeline within 24 hours." />
+        sub="Start with a low risk 3-day trial. If your team is ready to follow up fast, we can have exclusive homeowners hitting your pipeline within 24 hours."
+        href="/contact?type=leads" cta="Start a 3-Day Trial" />
     </main>
   );
 }
@@ -193,7 +194,7 @@ export function ApptNicheHome({ niche }) {
             <HeroTitle lines={niche.hero.title} />
             <p className="hero-sub anim-up d4">{niche.hero.sub}</p>
             <div className="hero-cta anim-up d5">
-              <Link href="/contact" className="btn btn-brass">Secure Your Market <ArrowUpRight size={17} /></Link>
+              <Link href="/contact?type=appointments" className="btn btn-brass">Secure Your Market <ArrowUpRight size={17} /></Link>
               <Link href="/how-it-works" className="btn btn-ghost">See How It Works</Link>
             </div>
             <div className="hero-pills anim-up d6">
@@ -267,7 +268,8 @@ export function ApptNicheHome({ niche }) {
       </section>
 
       <FinalCTA h={`Ready to fill your calendar with ${niche.noun} appointments?`}
-        sub="Territories are exclusive. One quick call confirms whether your market is still open and what a shown appointment is worth in your area." />
+        sub="Territories are exclusive. One quick call confirms whether your market is still open and what a shown appointment is worth in your area."
+        href="/contact?type=appointments" cta="Secure Your Market" />
     </main>
   );
 }

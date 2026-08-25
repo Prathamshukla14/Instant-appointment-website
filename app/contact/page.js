@@ -1,29 +1,21 @@
-import Script from "next/script";
 import { PageHero } from "@/components/Layout";
+import ContactCalendars from "@/components/ContactCalendars";
 
 export const metadata = {
-  title: "Contact Us | Book a Growth Call",
-  description: "Book your RemodelingPro Growth Call with InstantAppointment AI. Check availability and schedule a consultation.",
+  title: "Contact Us | Book a Call",
+  description: "Book a call with InstantAppointment AI. Start a 3-day exclusive lead trial, or book a RemodelingPro Growth Call for remodeling and HVAC appointments.",
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
+export default function ContactPage({ searchParams }) {
+  const type = searchParams?.type === "appointments" ? "appointments" : "leads";
   return (
     <main>
-      <PageHero eyebrow="CONTACT US" title="Let's see if your market is open."
-        sub="Book your RemodelingPro Growth Call below. We'll check your territory and discuss your remodeling business." />
+      <PageHero eyebrow="CONTACT US" title="Let's get exclusive homeowners in your pipeline."
+        sub="Pick the option that fits your business, then grab a time below. We'll confirm your market is open and size your volume." />
       <section className="section contact-sec">
         <div className="wrap">
-          <div className="calendar-embed">
-            <iframe 
-              src="https://api.leadconnectorhq.com/widget/booking/wa1dsl7BTyanmXxlAmLS" 
-              style={{ width: "100%", border: "none", overflow: "hidden", minHeight: "600px" }}
-              scrolling="no"
-              id="wa1dsl7BTyanmXxlAmLS_1783592340398"
-              title="Book RemodelingPro Growth Call"
-            />
-            <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="afterInteractive" />
-          </div>
+          <ContactCalendars defaultType={type} />
         </div>
       </section>
     </main>

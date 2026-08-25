@@ -12,7 +12,7 @@ export const metadata = {
   alternates: { canonical: "/pricing" },
 };
 
-function PriceCard({ p, highlight }) {
+function PriceCard({ p, highlight, type }) {
   return (
     <Reveal className={`price-card ${highlight ? "featured" : ""}`}>
       <div className="price-card-head">
@@ -33,7 +33,7 @@ function PriceCard({ p, highlight }) {
           {p.after.map((t) => <li key={t}><Check size={15} strokeWidth={2.4} /> <span>{t}</span></li>)}
         </ul>
       </div>
-      <Link href="/contact" className={`btn ${highlight ? "btn-brass" : "btn-ghost"} price-cta`}>{p.cta} <ArrowUpRight size={16} /></Link>
+      <Link href={`/contact?type=${type}`} className={`btn ${highlight ? "btn-brass" : "btn-ghost"} price-cta`}>{p.cta} <ArrowUpRight size={16} /></Link>
     </Reveal>
   );
 }
@@ -47,8 +47,8 @@ export default function PricingPage() {
       <section className="section">
         <div className="wrap">
           <div className="price-grid">
-            <PriceCard p={PRICING.lead} highlight />
-            <PriceCard p={PRICING.appointment} />
+            <PriceCard p={PRICING.lead} highlight type="leads" />
+            <PriceCard p={PRICING.appointment} type="appointments" />
           </div>
           <Reveal className="price-note mono">Weekly and monthly lead packages are sized to your goals and market. Appointment pricing ($350–450) varies by area and service.</Reveal>
         </div>
