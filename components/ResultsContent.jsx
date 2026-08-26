@@ -164,7 +164,9 @@ export default function ResultsContent() {
                     </div>
                     <div>
                       <div className="tst-name">{r.name}</div>
-                      <div className="tst-co mono">{r.company} &middot; {r.tag}</div>
+                      {(r.company || r.tag) && (
+                        <div className="tst-co mono">{[r.company, r.tag].filter(Boolean).join(" · ")}</div>
+                      )}
                     </div>
                   </div>
                 </Reveal>
